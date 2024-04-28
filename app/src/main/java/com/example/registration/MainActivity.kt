@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var radioButton: RadioButton
     lateinit var spinner: Spinner
     var hobbies= arrayOf("Dancing","Singing","Drawing","Reading")
+    lateinit var button: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,10 +41,16 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         textView=findViewById(R.id.textView4)
         editText=findViewById(R.id.editName)
         editText=findViewById(R.id.EmailAddress)
+        textView=findViewById(R.id.textView5)
         radioGroup=findViewById(R.id.radioGroup)
         radioButton=findViewById(R.id.male)
         radioButton=findViewById(R.id.female)
         spinner=findViewById(R.id.spinner)
+        button =findViewById(R.id.button)
+        button.setOnClickListener {
+            Toast.makeText(this,"Registration complete",Toast.LENGTH_LONG).show()
+        }
+
 
         spinner.onItemSelectedListener = this
 
